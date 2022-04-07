@@ -16,7 +16,7 @@ public class WarpSpeed : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.N))
         {
             // I wanted to change the 'speed' property of the plane but did not find an easy way how to do it.
             transform.Translate(Vector3.forward * warpSpeedMultiplier);

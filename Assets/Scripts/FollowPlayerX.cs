@@ -4,23 +4,15 @@ using UnityEngine;
 
 public class FollowPlayerX : MonoBehaviour
 {
-    public GameObject plane;
+    public Transform target;
     public Vector3 offset;
+    public float smoothSpeed = 0.05f;
 
-    // Start is called before the first frame update
-    void Start()
+    void LateUpdate()
     {
+        Vector3 desiredPosition = target.position + offset;
+        transform.position = Vector3.Lerp(target.position, desiredPosition, smoothSpeed);
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        transform.position = plane.transform.position + offset;
-
-        /*
-         * Rotate camera along with the airplane.
-         */
-        transform.rotation = plane.transform.rotation;
+        transform.rotation = target.rotation;
     }
 }
